@@ -11,15 +11,19 @@ class CustomPopUpViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var bgBtn: UIButton!
+    @IBOutlet weak var openNaverOpen: UIButton!
     @IBOutlet weak var subscribeBtn: UIButton!
     
     var subscribeBtnCompletionClosure: (() -> Void)?
+    
+    var myPopUpDelegate: PopUpDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         contentView.layer.cornerRadius = 30
         subscribeBtn.layer.cornerRadius = 10
+        openNaverOpen.layer.cornerRadius = 10
     }
     
     // MARK: - Action methods
@@ -36,5 +40,10 @@ class CustomPopUpViewController: UIViewController {
             // 메인에 알린다.
             subscribeBtnCompletionClosure()
         }
+    }
+    @IBAction func gotoNaverBtnClicked(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        myPopUpDelegate?.openNaverBtnClicked()
+        
     }
 }

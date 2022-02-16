@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		342B161827BCBDD6003C2AD1 /* PopUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B161727BCBDD6003C2AD1 /* PopUpDelegate.swift */; };
 		343AB22227BB8E4100F2276F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AB22127BB8E4100F2276F /* AppDelegate.swift */; };
 		343AB22427BB8E4100F2276F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AB22327BB8E4100F2276F /* SceneDelegate.swift */; };
 		343AB22627BB8E4100F2276F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343AB22527BB8E4100F2276F /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		342B161727BCBDD6003C2AD1 /* PopUpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpDelegate.swift; sourceTree = "<group>"; };
 		343AB21E27BB8E4100F2276F /* CustomPopUp_tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPopUp_tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		343AB22127BB8E4100F2276F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		343AB22327BB8E4100F2276F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				343AB22327BB8E4100F2276F /* SceneDelegate.swift */,
 				343AB22527BB8E4100F2276F /* ViewController.swift */,
 				343AB23727BB979400F2276F /* CustomPopUpViewController.swift */,
+				342B161727BCBDD6003C2AD1 /* PopUpDelegate.swift */,
 				343AB22727BB8E4100F2276F /* Main.storyboard */,
 				343AB23527BB951E00F2276F /* PopUp.storyboard */,
 				343AB22A27BB8E4300F2276F /* Assets.xcassets */,
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				342B161827BCBDD6003C2AD1 /* PopUpDelegate.swift in Sources */,
 				343AB23827BB979400F2276F /* CustomPopUpViewController.swift in Sources */,
 				343AB22627BB8E4100F2276F /* ViewController.swift in Sources */,
 				343AB22227BB8E4100F2276F /* AppDelegate.swift in Sources */,

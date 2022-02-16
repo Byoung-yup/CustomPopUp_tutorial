@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         btn.contentVerticalAlignment = .center
         btn.addTarget(self, action: #selector(onCreatePopUpBtnClicked(_:)), for: .touchUpInside)
         btn.sizeToFit()
-        //self.view.addSubview(btn)
         return btn
     }()
     
@@ -61,7 +60,18 @@ class ViewController: UIViewController {
             self.popUpBtn.isHidden = true
         }
         
+        customPopUpVC.myPopUpDelegate = self
+        
         self.present(customPopUpVC, animated: true)
     }
 }
 
+// MARK: - PopUpDelegate methods
+extension ViewController: PopUpDelegate {
+    
+    func openNaverBtnClicked() {
+        let channelURL = URL(string: "https://www.naver.com")
+        self.webView.load(URLRequest(url: channelURL!))
+        self.popUpBtn.isHidden = true
+    }
+}
