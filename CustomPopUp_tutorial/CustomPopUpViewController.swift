@@ -11,6 +11,7 @@ class CustomPopUpViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var bgBtn: UIButton!
+    @IBOutlet weak var openDaumBtn: UIButton!
     @IBOutlet weak var openNaverOpen: UIButton!
     @IBOutlet weak var subscribeBtn: UIButton!
     
@@ -24,6 +25,8 @@ class CustomPopUpViewController: UIViewController {
         contentView.layer.cornerRadius = 30
         subscribeBtn.layer.cornerRadius = 10
         openNaverOpen.layer.cornerRadius = 10
+        openDaumBtn.layer.cornerRadius = 10
+        
     }
     
     // MARK: - Action methods
@@ -42,8 +45,14 @@ class CustomPopUpViewController: UIViewController {
         }
     }
     @IBAction func gotoNaverBtnClicked(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
         myPopUpDelegate?.openNaverBtnClicked()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func gotoDaumBtnClicked(_ sender: UIButton) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationName), object: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
 }

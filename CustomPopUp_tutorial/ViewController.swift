@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 import WebKit
 
+let notificationName = "btnClickNotification"
+
 class ViewController: UIViewController {
     
     var popUpBtn: UIButton = {
@@ -29,6 +31,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.setUpUI()
+        
+        // 노티피케이션 이라는 방송 수신기를 장착한다.
+        NotificationCenter.default.addObserver(self, selector: #selector(gotoDaum), name: NSNotification.Name(rawValue: notificationName), object: nil)
+    }
+    
+    // 메모리해제
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     func setUpUI() {
@@ -63,6 +73,12 @@ class ViewController: UIViewController {
         customPopUpVC.myPopUpDelegate = self
         
         self.present(customPopUpVC, animated: true)
+    }
+    
+    @objc func gotoDaum() {
+        let channelURL = URL(string: "https://www.daum.net")
+        self.webView.load(URLRequest(url: channelURL!))
+        self.popUpBtn.isHidden = true
     }
 }
 
